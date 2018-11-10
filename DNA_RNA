@@ -2,12 +2,37 @@ class DNA:
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
-        
+
     def gc(self):
         self.GC_counter = 0
         for i in range(self.sequence_length):
-            if (self.sequence[i] == 'G') or (self.seq[i] == 'C'):
-                self.GC_counter += 1
-        self.GC_content = self.GC_counter / self.sequence_length
+            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
+                 self.GC_counter += 1
+        self.GC_content = float(self.GC_counter / self.sequence_length)
         return (self.GC_content)
 
+    def reverse_complement(self):
+        self.complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+        return ''.join([self.complement[base] for base in sequence[::-1]])
+
+class RNA:
+    def __init__(self, sequence):
+        self.sequence = sequence
+        self.sequence_length = len(sequence)
+
+    def gc(self):
+        self.GC_counter = 0
+        for i in range(self.sequence_length):
+            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
+                self.GC_counter += 1
+        self.GC_content = float(self.GC_counter / self.sequence_length)
+        return (self.GC_content)
+
+    def reverse_complement(self):
+        self.complement = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
+        return ''.join([self.complement[base] for base in sequence[::-1]])
+
+
+sequence = 'AAAAAAAAAUGC'
+print(sequence)
+MyDNA = RNA(sequence)
