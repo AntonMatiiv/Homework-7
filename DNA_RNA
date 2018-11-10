@@ -1,3 +1,4 @@
+
 class DNA:
     def __init__(self, sequence):
         self.sequence = sequence
@@ -14,6 +15,12 @@ class DNA:
     def reverse_complement(self):
         self.complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
         return ''.join([self.complement[base] for base in sequence[::-1]])
+
+    def transcribe(self):
+        self.complement = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
+        for i in self.sequence:
+            self.DNA_template = self.sequence.replace('T', 'U')
+        return ''.join([self.complement[base] for base in self.DNA_template])
 
 class RNA:
     def __init__(self, sequence):
