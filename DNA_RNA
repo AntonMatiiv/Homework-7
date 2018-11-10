@@ -1,1 +1,13 @@
+class DNA:
+    def __init__(self, sequence):
+        self.sequence = sequence
+        self.sequence_length = len(sequence)
+        
+    def gc(self):
+        self.GC_counter = 0
+        for i in range(self.sequence_length):
+            if (self.sequence[i] == 'G') or (self.seq[i] == 'C'):
+                self.GC_counter += 1
+        self.GC_content = self.GC_counter / self.sequence_length
+        return (self.GC_content)
 
