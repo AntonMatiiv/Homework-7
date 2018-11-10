@@ -31,8 +31,3 @@ class RNA:
     def reverse_complement(self):
         self.complement = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
         return ''.join([self.complement[base] for base in sequence[::-1]])
-
-
-sequence = 'AAAAAAAAAUGC'
-print(sequence)
-MyDNA = RNA(sequence)
