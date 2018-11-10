@@ -1,41 +1,40 @@
 class DNA:
-    
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
 
     def gc(self):
-        self.gc_counter = 0
+        gc_counter = 0
         for i in range(self.sequence_length):
             if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
-                 self.gc_counter += 1
-        self.gc_content = float(self.gc_counter / self.sequence_length)
-        return (self.gc_content)
+                 gc_counter += 1
+        gc_content = float(gc_counter / self.sequence_length)
+        return (gc_content)
 
     def reverse_complement(self):
-        self.complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
-        return ''.join([self.complement[base] for base in sequence[::-1]])
+        dna_reverse_complement_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+        return ''.join([dna_reverse_complement_dict[base] for base in sequence[::-1]])
 
     def transcribe(self):
-        self.complement = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
+        dna_transcribe_dict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
         for i in self.sequence:
-            self.dna_template = self.sequence.replace('T', 'U')
-        return ''.join([self.complement[base] for base in self.dna_template])
+            dna_template = self.sequence.replace('T', 'U')
+        return ''.join([dna_transcribe_dict[base] for base in dna_template])
 
 class RNA:
-    
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
 
     def gc(self):
-        self.gc_counter = 0
+        gc_counter = 0
         for i in range(self.sequence_length):
             if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
-                self.gc_counter += 1
-        self.gc_content = float(self.gc_counter / self.sequence_length)
-        return (self.gc_content)
+                gc_counter += 1
+        gc_content = float(gc_counter / self.sequence_length)
+        return (gc_content)
 
     def reverse_complement(self):
-        self.complement = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
-        return ''.join([self.complement[base] for base in sequence[::-1]])
+        rna_reverse_complement_dict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
+        return ''.join([rna_reverse_complement_dict[base] for base in sequence[::-1]])
+
