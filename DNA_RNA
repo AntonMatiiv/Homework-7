@@ -17,7 +17,7 @@ class Dna:
 
     def transcribe(self):
         rna_transcript = self.sequence.replace('T', 'U')
-        return rna_transcript
+        return Rna(rna_transcript)
 
 class Rna:
     def __init__(self, sequence):
