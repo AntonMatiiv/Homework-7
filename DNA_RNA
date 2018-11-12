@@ -13,7 +13,7 @@ class Dna:
     def gc(self):
         gc_counter = 0
         for i in range(self.sequence_length):
-            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
+            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C') or (self.sequence[i] == 'g') or (self.sequence[i] == 'c'):
                  gc_counter += 1
         gc_content = round(float((gc_counter / self.sequence_length) * 100), 1)
         return gc_content
@@ -41,7 +41,7 @@ class Rna:
     def gc(self):
         gc_counter = 0
         for i in range(self.sequence_length):
-            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
+            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C') or (self.sequence[i] == 'g') or (self.sequence[i] == 'c'):
                 gc_counter += 1
         gc_content = round(float((gc_counter / self.sequence_length) * 100), 1)
         return gc_content
