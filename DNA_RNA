@@ -2,6 +2,10 @@ class Dna:
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
+        appropriate_symbols = "ATGC"
+        for i in self.sequence:
+            if i not in appropriate_symbols:
+                raise Exception('Error. This not a DNA sequence')
 
     def gc(self):
         gc_counter = 0
@@ -23,6 +27,10 @@ class Rna:
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
+        appropriate_symbols = "AUGC"
+        for i in self.sequence:
+            if i not in appropriate_symbols:
+                raise Exception('Error. This not a RNA sequence')
 
     def gc(self):
         gc_counter = 0
