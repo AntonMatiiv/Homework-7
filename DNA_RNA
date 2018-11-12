@@ -8,7 +8,7 @@ class DNA:
         for i in range(self.sequence_length):
             if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
                  gc_counter += 1
-        gc_content = float(gc_counter / self.sequence_length)
+        gc_content = round(float((gc_counter / self.sequence_length) * 100), 1)
         return gc_content
 
     def reverse_complement(self):
@@ -31,7 +31,7 @@ class RNA:
         for i in range(self.sequence_length):
             if (self.sequence[i] == 'G') or (self.sequence[i] == 'C'):
                 gc_counter += 1
-        gc_content = float(gc_counter / self.sequence_length)
+        gc_content = round(float((gc_counter / self.sequence_length) * 100), 1)
         return gc_content
 
     def reverse_complement(self):
