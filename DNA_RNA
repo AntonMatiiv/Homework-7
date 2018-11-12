@@ -1,4 +1,4 @@
-class DNA:
+class Dna:
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
@@ -13,7 +13,7 @@ class DNA:
 
     def reverse_complement(self):
         dna_reverse_complement_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
-        return ''.join([dna_reverse_complement_dict[base] for base in sequence[::-1]])
+        return ''.join([dna_reverse_complement_dict[base] for base in self.sequence[::-1]])
 
     def transcribe(self):
         dna_transcribe_dict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
@@ -21,7 +21,7 @@ class DNA:
             dna_template = self.sequence.replace('T', 'U')
         return ''.join([dna_transcribe_dict[base] for base in dna_template])
 
-class RNA:
+class Rna:
     def __init__(self, sequence):
         self.sequence = sequence
         self.sequence_length = len(sequence)
@@ -36,5 +36,5 @@ class RNA:
 
     def reverse_complement(self):
         rna_reverse_complement_dict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
-        return ''.join([rna_reverse_complement_dict[base] for base in sequence[::-1]])
+        return ''.join([rna_reverse_complement_dict[base] for base in self.sequence[::-1]])
 
