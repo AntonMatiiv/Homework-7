@@ -16,10 +16,8 @@ class Dna:
         return ''.join([dna_reverse_complement_dict[base] for base in self.sequence[::-1]])
 
     def transcribe(self):
-        dna_transcribe_dict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A'}
-        for i in self.sequence:
-            dna_template = self.sequence.replace('T', 'U')
-        return ''.join([dna_transcribe_dict[base] for base in dna_template])
+        rna_transcript = self.sequence.replace('T', 'U')
+        return rna_transcript
 
 class Rna:
     def __init__(self, sequence):
