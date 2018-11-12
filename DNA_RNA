@@ -1,0 +1,53 @@
+class Dna:
+    def __init__(self, sequence):
+        self.sequence = sequence
+        self.sequence_length = len(sequence)
+        appropriate_symbols = "ATGCatgc"
+        for i in self.sequence:
+            if i not in appropriate_symbols:
+                raise Exception('Error. This not a DNA sequence')
+    
+    def __str__(self):
+        return (self.sequence)
+
+    def gc(self):
+        gc_counter = 0
+        for i in range(self.sequence_length):
+            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C') or (self.sequence[i] == 'g') or (self.sequence[i] == 'c'):
+                 gc_counter += 1
+        gc_content = round(float((gc_counter / self.sequence_length) * 100), 1)
+        return gc_content
+
+    def reverse_complement(self):
+        dna_reverse_complement_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A', 'a': 't', 'c': 'g', 'g': 'c', 't': 'a'}
+        return ''.join([dna_reverse_complement_dict[base] for base in self.sequence[::-1]])
+
+    def transcribe(self):
+        rna_transcript = self.sequence.replace('T', 'U')
+        rna_transcript = self.sequence.replace('t', 'u')
+        return Rna(rna_transcript)
+
+class Rna:
+    def __init__(self, sequence):
+        self.sequence = sequence
+        self.sequence_length = len(sequence)
+        appropriate_symbols = "AUGCaugc"
+        for i in self.sequence:
+            if i not in appropriate_symbols:
+                raise Exception('Error. This not a RNA sequence')
+    
+    def __str__(self):
+        return (self.sequence)
+
+    def gc(self):
+        gc_counter = 0
+        for i in range(self.sequence_length):
+            if (self.sequence[i] == 'G') or (self.sequence[i] == 'C') or (self.sequence[i] == 'g') or (self.sequence[i] == 'c'):
+                gc_counter += 1
+        gc_content = round(float((gc_counter / self.sequence_length) * 100), 1)
+        return gc_content
+
+    def reverse_complement(self):
+        rna_reverse_complement_dict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A', 'a': 'u', 'c': 'g', 'g': 'c', 'u': 'a'}
+        return ''.join([rna_reverse_complement_dict[base] for base in self.sequence[::-1]])
+
