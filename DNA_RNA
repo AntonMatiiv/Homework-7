@@ -6,6 +6,9 @@ class Dna:
         for i in self.sequence:
             if i not in appropriate_symbols:
                 raise Exception('Error. This not a DNA sequence')
+    
+    def __str__(self):
+        return (self.sequence)
 
     def gc(self):
         gc_counter = 0
@@ -31,6 +34,9 @@ class Rna:
         for i in self.sequence:
             if i not in appropriate_symbols:
                 raise Exception('Error. This not a RNA sequence')
+    
+    def __str__(self):
+       return (self.sequence)
 
     def gc(self):
         gc_counter = 0
